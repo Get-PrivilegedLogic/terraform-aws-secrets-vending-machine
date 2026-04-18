@@ -63,10 +63,6 @@ resource "aws_api_gateway_stage" "svm" {
   deployment_id = aws_api_gateway_deployment.svm.id
   stage_name    = var.environment
 
-  access_log_settings {
-    destination_arn = "arn:aws:logs:${var.aws_region}:${data.aws_caller_identity.current.account_id}:log-group:/svm/${var.project_name}-${var.environment}"
-  }
-
   tags = {
     Project     = var.project_name
     Environment = var.environment

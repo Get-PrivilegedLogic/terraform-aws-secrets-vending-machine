@@ -13,10 +13,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "tf-state-svm-YOUR_ACCOUNT_ID"
+    bucket         = "tf-state-svm-098824476485"
     key            = "secrets-vending-machine/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "tf-lock-svm"
+    use_lockfile   = true
     encrypt        = true
   }
 }

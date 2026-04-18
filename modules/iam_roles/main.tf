@@ -40,7 +40,7 @@ resource "aws_iam_role_policy" "lambda_execution" {
         Sid    = "AssumeVendedRole"
         Effect = "Allow"
         Action = "sts:AssumeRole"
-        Resource = var.vended_role_arn
+        Resource = aws_iam_role.vended.arn
       }
     ]
   })
